@@ -1,0 +1,12 @@
+@import url("./globals.css");
+
+main {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(400px, 100%), 1fr));
+	grid-auto-rows: 1fr;
+	grid-auto-flow: row;
+	gap: 1rem;
+	justify-content: center;
+  padding-block-start: 1rem;
+	padding-inline: 1rem;
+}

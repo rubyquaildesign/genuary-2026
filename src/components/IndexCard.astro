@@ -1,0 +1,80 @@
+---
+import type { ArtworkData } from '$scripts/types';
+import { Image } from 'astro:assets';
+
+export interface Props extends ArtworkData {}
+
+const p = Astro.props;
+const images = import.meta.glob('../assets/*.png');
+const image: ImageMetadata | undefined = await (
+	Object.entries(images).find(([k]) => k.includes(p.id))?.[1]() as Promise<{
+		default: ImageMetadata;
+	}>
+)?.then((v) => v.default);
+---
+
+<article data-day={p.day} class="artwork-card">
+	<a href={`/${p.id}/`}>
+    <header>Day {p.day}</header>
+		<h2>{p.title}</h2>
+		<p>Prompt: {p.prompt}</p>
+		{image && (
+      <Image 
+        src={image}
+        alt={`Thumbnail for artwork ${p.title}`}
+        style={`view-transition-name: visual-${p.id};`}
+      />
+    )}
+	</a>
+</article>
+
+<style is:global>
+
+.artwork-card {
+	border: 2px solid var(--color-foreground);
+  background-color: var(--color-background);
+  border-radius: 6px;
+	padding: 1rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap:0.5rem;
+  flex-direction: column;
+  transition: all 75ms ease-in-out;
+  &:focus-within {
+     outline: 2px solid var(--color-color-cyan);
+     outline-offset: 2px;
+   }
+  &:hover {
+    border-width: 4px;
+    transform: scale(102%);
+  }
+  header {
+    color: var(--color-foreground);
+    margin: 0;
+    align-self: center;
+    text-align: center;
+    width: max-content;
+    text-transform: uppercase;
+    font-size: var(--text-size-xl);
+
+  }
+
+  h2, p {
+    margin: 0;
+  }
+	img {
+		margin-top: 1rem;
+		aspect-ratio: 4 / 3;
+		width: 100%;
+    border-radius: 2px;
+		height: auto;
+    justify-self: end;
+	}
+
+  a {
+    text-decoration: none;
+    display: contents;
+  }
+}
+</style>

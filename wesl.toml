@@ -1,0 +1,2 @@
+edition = "unstable_2025"
+include = [ "./src/shaders/**/*.w[eg]sl" ]

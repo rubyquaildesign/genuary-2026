@@ -1,12 +1,46 @@
+---
+import Data from '../content/artworks.json';
+import '../styles/index.css';
+import Head from '$components/Head.astro';
+import testImage from '../assets/test.png';
+import { getImage, Image } from 'astro:assets';
+import Header from '$components/Header.astro';
+import IndexCard from '$components/IndexCard.astro';
+import IndexFill from '$components/IndexFill.astro';
+const d = await getImage({
+	src: testImage,
+	height: 630,
+	width: 1200,
+	format: 'png',
+});
+const images = import.meta.glob('../assets/*.png') as Record<
+	string,
+	() => Promise<{ default: ImageMetadata }>
+>;
+console.log(images);
+---
+
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-		<meta name="viewport" content="width=device-width">
-		<meta name="generator" content={Astro.generator}>
-		<title>Astro</title>
+		<Head
+			title="Ruby Quail – Genuary 2026"
+			description="Genuary 2026"
+			image={d}
+			imageAlt={`Some images`}
+			url={Astro.url.toString()}
+		/>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header title="Genuary 2026" subtitle="Ruby Quail"/>
+		<main>
+			{Data.artworks.filter((d) => d.day !== 0).map(async (v) => {
+				return v.ready ? (
+					
+					<IndexCard {...v}/>
+				) : (
+					<IndexFill {...v} />
+				)
+			})}
+		</main>
 	</body>
 </html>

@@ -1,0 +1,40 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"title": "Generated Schema",
+	"description": "Generated from JSON data",
+	"type": "object",
+	"properties": {
+		"artworks": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"day": {
+						"type": "integer"
+					},
+					"prompt": {
+						"type": "string"
+					},
+					"title": {
+						"type": "string"
+					},
+					"id": {
+						"type": "string"
+					},
+					"ready": {
+						"type": "boolean"
+					},
+					"description": {
+						"type": "string"
+					},
+					"ideas": {
+						"type": "string"
+					}
+				},
+				"required": ["day", "description", "id", "prompt", "ready", "title"]
+			},
+			"minItems": 0
+		}
+	},
+	"required": ["artworks"]
+}

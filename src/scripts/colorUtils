@@ -1,0 +1,22 @@
+import { zip } from '@std/collections';
+import * as T from '@texel/color';
+import { range, scaleLinear } from 'd3';
+
+export function mixColor(a: string, b: string, amt = 0.5): string {
+	return T.serialize(
+		zip(T.parse(a, T.OKLab), T.parse(b, T.OKLab)).map(([av, bv]) =>
+			T.lerp(av, bv, amt),
+		),
+		T.OKLab,
+		T.sRGB,
+	);
+}
+
+export function createColorScale(colors: string[]) {
+	return scaleLinear(
+			range(colors.length).map((i) => i / (colors.length - 1)),
+			colors,
+		)
+		.interpolate((a, b) => (t) => mixColor(a, b, t))
+		.clamp(true);
+}

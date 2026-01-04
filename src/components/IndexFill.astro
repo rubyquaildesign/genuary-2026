@@ -1,0 +1,55 @@
+---
+import type { ArtworkData } from '$scripts/types';
+
+export interface Props extends ArtworkData {}
+
+const p = Astro.props;
+---
+
+<article class="artwork-placeholder">
+	<header>Day {p.day}</header>
+	<p>{p.prompt}</p>
+</article>
+
+<style is:global>
+.artwork-placeholder {
+	border: 2px dashed color-mix(in lab, var(--color-foreground) 50%, var(--color-color-black));
+	border-radius: 6px;
+	padding: 1rem;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	gap: 0.5rem;
+	flex-direction: column;
+  justify-content: center;
+	color: color-mix(in lab, var(--color-foreground) 50%, var(--color-color-black));
+
+  header {
+	margin: 0;
+	align-self: center;
+	text-align: center;
+	width: max-content;
+	text-transform: uppercase;
+	font-size: var(--text-size-xl);
+}
+
+h2,
+p {
+	margin: 0;
+  align-self: center;
+}
+img {
+	margin-top: 1rem;
+	aspect-ratio: 4 / 3;
+	width: 100%;
+	border-radius: 2px;
+	height: auto;
+	justify-self: end;
+}
+
+a {
+	text-decoration: none;
+	display: contents;
+}
+}
+</style>

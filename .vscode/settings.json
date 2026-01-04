@@ -18,6 +18,7 @@
 		"editor.defaultFormatter": "biomejs.biome"
 	},
 	"[astro]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "biomejs.biome",
+		"editor.codeActionsOnSave": { "source.fixAll.biome": "never" }
 	}
 }

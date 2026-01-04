@@ -1,0 +1,263 @@
+{
+	"$schema": "../../public/schema.json",
+	"artworks": [
+		{
+			"day": 0,
+			"description": "A little test one",
+			"id": "0-test",
+			"prompt": "test",
+			"ready": true,
+			"title": "My Test",
+			"ideas":"Colours, Deluany, Spectrum Mix"
+		},
+		{
+			"day": 1,
+			"prompt": "One color, one shape.",
+			"title": "One blob, but we are many",
+			"id": "1-one-color-one-shape",
+			"ready": true,
+			"description": "I need to ",
+			"ideas": "Create a random blob shape, fill the edges with the blob shape, fill the middle with more blob shape"
+		},
+		{
+			"day": 2,
+			"prompt": "Twelve principles of animation.",
+			"title": "",
+			"id": "2-twelve-principles-of-animation",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 3,
+			"prompt": "Fibonacci forever. Create a work that uses the Fibonacci sequence in some way.",
+			"title": "Sand Water Towers",
+			"id": "3-fibonacci-forever-way",
+			"ready": true,
+			"description": ""
+		},
+		{
+			"day": 4,
+			"prompt": "Lowres. An image or graphic with low resolution, where details are simplified or pixelated.",
+			"title": "",
+			"id": "4-lowres-an-pixelated",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 5,
+			"prompt": "Write “Genuary”. Avoid using a font.",
+			"title": "",
+			"id": "5-write-genuary-font",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 6,
+			"prompt": "Lights on/off. Make something that changes when you switch on or off the “digital” lights.",
+			"title": "",
+			"id": "6-lights-on-lights",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 7,
+			"prompt": "Boolean algebra. Get inspired by Boolean algebra, in any way.",
+			"title": "",
+			"id": "7-boolean-algebra-way",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 8,
+			"prompt": "A City. Create a generative metropolis.",
+			"title": "",
+			"id": "8-a-city-metropolis",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 9,
+			"prompt": "Crazy automaton. Cellular automata with crazy rules.",
+			"title": "",
+			"id": "9-crazy-automaton-rules",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 10,
+			"prompt": "Polar coordinates.",
+			"title": "",
+			"id": "10-polar-coordinates",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 11,
+			"prompt": "Quine. A Quine is a form of code poetry, it’s a computer program that outputs exactly its own source code.",
+			"title": "",
+			"id": "11-quine-a-code",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 12,
+			"prompt": "Boxes only.",
+			"title": "",
+			"id": "12-boxes-only",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 13,
+			"prompt": "Self portrait. For example, get started with a very basic human face, a few circles or oval shapes. How far can you improve this by adding features that actually look like you. Try adding eyes, eyelashes, hair, and make a few parameters or colors variable. Even though you are aiming for a self portrait, it might be fun to render some random variations as well.",
+			"title": "",
+			"id": "13-self-portrait-well",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 14,
+			"prompt": "Everything fits perfectly.",
+			"title": "",
+			"id": "14-everything-fits-perfectly",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 15,
+			"prompt": "Create an invisible object where only the shadows can be seen.",
+			"title": "",
+			"id": "15-create-an-seen",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 16,
+			"prompt": "Order and disorder.",
+			"title": "",
+			"id": "16-order-and-disorder",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 17,
+			"prompt": "Wallpaper group. There are only 17 ways to cover a plane with a repeating pattern, choose your favourite on this page: Wallpaper group.",
+			"title": "",
+			"id": "17-wallpaper-group-group",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 18,
+			"prompt": "Unexpected path. Draw a route that changes direction based on one very simple rule.",
+			"title": "",
+			"id": "18-unexpected-path-rule",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 19,
+			"prompt": "16x16",
+			"title": "",
+			"id": "19-16-x-16",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 20,
+			"prompt": "One line. An artwork that is made of a single line only.",
+			"title": "",
+			"id": "20-one-line-only",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 21,
+			"prompt": "Bauhaus Poster. Create a poster design inspired by the German art school Bauhaus.",
+			"title": "",
+			"id": "21-bauhaus-poster-bauhaus",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 22,
+			"prompt": "Pen plotter ready.",
+			"title": "",
+			"id": "22-pen-plotter-ready",
+			"ready": false,
+			"description": "What if I don’t have a plotter? A work is considered “plotter ready” if it can be drawn using a plotter. That’s a drawing robot holding a pen. Kind of like a 3D printer, except for 2D. The limitation here is that a plotter can only draw lines. And also that it cannot erase lines. It can also not draw over the same spot 20 times because the robot doesn’t care and the pen will rip through the paper. In theory you can draw a dot with a very short line or small circle, however it takes a small but non-trivial amount of time to lift up the pen and lower it again, so if you have 50 000 dots, this will take a lot of time. Another thing is that changing pens is a hassle, so you don’t want to do that too often, preferably not at all. It’s also hard to make sure each new pen is neatly aligned with the earlier ones. Generally plotter artists use SVG files to represent their plots. However, you don’t get to use the fancy SVG filters or anything. In fact you don’t get to use the fill attribute! Because only lines, which includes having to use lines to hatch any filled areas. Now you might wonder why people even bother. The upside of plotters is that they are ridiculously precise and can draw with a super fine 0.25mm line on a 297x420 (A3) paper or larger, that you can get more interesting textures than printers (using e.g. ballpoint or fountain pens). And they work at night even when you’re not looking. Another upside is that if you didn’t know SVG, you only need to know a super tiny bit about SVG, because you only need/get to draw lines."
+		},
+		{
+			"day": 23,
+			"prompt": "Transparency. Explore the concept of transparency.",
+			"title": "",
+			"id": "23-transparency-explore-transparency",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 24,
+			"prompt": "Perfectionist’s nightmare.",
+			"title": "",
+			"id": "24-perfectionist-s-nightmare",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 25,
+			"prompt": "Organic Geometry. Forms that look or act organic but are constructed entirely from geometric shapes.",
+			"title": "",
+			"id": "25-organic-geometry-shapes",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 26,
+			"prompt": "Recursive Grids. Split the canvas into a grid of some kind and recurse on each cell again and again.",
+			"title": "",
+			"id": "26-recursive-grids-again",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 27,
+			"prompt": "Lifeform. A shape or structure that behaves as if it’s alive or growing.",
+			"title": "",
+			"id": "27-lifeform-a-growing",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 28,
+			"prompt": "No libraries, no canvas, only HTML elements.",
+			"title": "",
+			"id": "28-no-libraries-elements",
+			"ready": false,
+			"description": "If you want to cheat and say that <canvas> or <svg> or even <img> are perfectly fine HTML elements, just remember that nobody ever hears the Genuary Police. I mean, has heard about the Genuary Police. It’s not true and there’s no such thing, stop asking. Anyhow, I don’t know have you heard about <div>’s? I heard they are pretty cool. Good luck!"
+		},
+		{
+			"day": 29,
+			"prompt": "Genetic evolution and mutation.",
+			"title": "",
+			"id": "29-genetic-evolution-and-mutation",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 30,
+			"prompt": "Its not a bug, its a feature.",
+			"title": "",
+			"id": "30-its-not-feature",
+			"ready": false,
+			"description": ""
+		},
+		{
+			"day": 31,
+			"prompt": "GLSL day. Create an artwork using only shaders.",
+			"title": "",
+			"id": "31-glsl-day-shaders",
+			"ready": false,
+			"description": ""
+		}
+	]
+}

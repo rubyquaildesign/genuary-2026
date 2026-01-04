@@ -1,0 +1,67 @@
+---
+import '$styles/globals.css';
+import type { ArtworkData } from '$scripts/types';
+import { getImage } from 'astro:assets';
+import Head from './Head.astro';
+import type { GetImageResult } from 'astro';
+import Header from './Header.astro';
+export interface Props extends ArtworkData {
+	url: URL;
+}
+const props: Props = Astro.props;
+const image = await import(`../assets/${props.id}.png`)
+	.then((v: { default: ImageMetadata }) => {
+		const d = v.default;
+		console.log(d);
+		
+		return getImage({ src: d, format: 'png', width: 1200, height: 628 });
+	})
+	.catch(() => {
+		return {
+			attributes: {},
+			options: {
+				src: '',
+			},
+			src: '',
+			rawOptions: {
+				src: '',
+			},
+			srcSet: {
+				attribute: '',
+				values: [],
+			},
+		};
+	});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<Head
+			{...{
+    description:props.description,
+    title:props.title,
+    imageAlt:`Image of Artwork: ${props.title}`,
+    url:props.url.toString(),
+    image
+  }}
+		/>
+	</head>
+	<body data-artwork-id={props.id}>
+		<Header title={props.title || "Bro"} subtitle={props.prompt} home/>
+		<main>
+			<canvas
+				id="canvas"
+				width="2560"
+				height="1920"
+				style={`view-transition-name: visual-${props.id};`}
+			></canvas>
+		</main>
+	</body>
+</html>
+<script>
+const id = window.document.body.dataset.artworkId;
+if (id) {
+	import(`../scripts/artworks/${id}.ts`);
+}
+</script>

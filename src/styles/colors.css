@@ -1,0 +1,77 @@
+:root {
+	/* Black (Host) */
+	--color-color-black: oklab(
+		40.94367855480772% 0.004065334730538467 -0.05440402143534995
+	);
+	/* Red (Syntax string) */
+	--color-color-red: oklab(
+		72.26851488504042% 0.15636308511102442 0.028347643070001927
+	);
+	/* Green (Command) */
+	--color-color-gree: oklab(
+		79.52627846423653% -0.08990872190675686 0.10663233698814967
+	);
+	/* Yellow (Command second) */
+	--color-color-yellow: oklab(
+		78.38666090274835% 0.026597425075818415 0.10231469978808416
+	);
+	/* Blue (Path) */
+	--color-color-blue: oklab(
+		71.89766782347935% -0.013350596072087773 -0.131483434740149
+	);
+	/* Magenta (Syntax var) */
+	--color-color-magenta: oklab(
+		75.14559924466643% 0.06619499005880991 -0.11700289301341882
+	);
+	/* Cyan (Prompt) */
+	--color-color-cyan: oklab(
+		82.00413218775158% -0.05918811085575293 -0.08681649200946251
+	);
+	/* White */
+	--color-color-white: oklab(
+		76.65856156943876% 0.00513986666336641 -0.053453950800582795
+	);
+	/* Bright Black */
+	--color-color-bright-black: oklab(
+		40.94367855480772% 0.004065334730538467 -0.05440402143534995
+	);
+	/* Bright Red (Command error) */
+	--color-color-bright-red: oklab(
+		72.26851488504042% 0.15636308511102442 0.028347643070001927
+	);
+	/* Bright Green (Exec) */
+	--color-color-bright-green: oklab(
+		79.52627846423653% -0.08990872190675686 0.10663233698814967
+	);
+	/* Bright Yellow */
+	--color-color-bright-yellow: oklab(
+		78.38666090274835% 0.026597425075818415 0.10231469978808416
+	);
+	/* Bright Blue (Folder) */
+	--color-color-bright-blue: oklab(
+		71.89766782347935% -0.013350596072087773 -0.131483434740149
+	);
+	/* Bright Magenta */
+	--color-color-bright-magenta: oklab(
+		75.14559924466643% 0.06619499005880991 -0.11700289301341882
+	);
+	/* Bright Cyan */
+	--color-color-bright-cyan: oklab(
+		82.00413218775158% -0.05918811085575293 -0.08681649200946251
+	);
+	/* Bright White */
+	--color-color-bright-white: oklab(
+		84.55730827486579% 0.005070745833812729 -0.06085904622396243
+	);
+	/* Background */
+	--color-background: oklab(
+		22.6288247600697% 0.003890387578578819 -0.021017063424718263
+	);
+	/* Foreground (Text) */
+	--color-foreground: oklab(
+		84.55730827486579% 0.005070745833812729 -0.06085904622396243
+	);
+	--color-cursor: oklab(
+		84.55730827486579% 0.005070745833812729 -0.06085904622396243
+	);
+}

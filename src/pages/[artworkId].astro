@@ -1,0 +1,21 @@
+---
+import '$styles/artwork.css'
+import type { GetStaticPaths } from 'astro';
+import data from '../content/artworks.json';
+import type { ArtworkData } from '../scripts/types';
+import Artwork from '$components/Artwork.astro';
+export const getStaticPaths = (() => {
+	return data.artworks
+		.filter((d) => d.ready)
+		.map((artwork) => {
+			return {
+				params: { artworkId: artwork.id },
+				props: artwork,
+			};
+		});
+}) satisfies GetStaticPaths;
+const props: ArtworkData = Astro.props;
+const url = Astro.url;
+---
+
+<Artwork {...props} {url}/>

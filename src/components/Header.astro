@@ -1,0 +1,76 @@
+---
+import HeaderBoundary from './HeaderBoundary.astro';
+
+export interface Props {
+	title: string;
+	subtitle: string;
+	home?: boolean;
+}
+const { title, subtitle, home = false } = Astro.props;
+---
+
+<header class="main-header">
+	<HeaderBoundary classes={['header-line','left-fill']}/>
+	<div class="header-box">
+		<h1>
+			<span>{title}</span>
+			<em role={"doc-subtitle" as any}>{subtitle}</em>
+		</h1>
+		{home && 
+			<nav>
+			<a href="/">Return Home</a>
+			</nav>
+			}
+	</div>
+	<HeaderBoundary classes={['header-line','right-fill']}/>
+</header>
+<style is:global>
+header.main-header {
+	width: 100%;
+	padding-block-start: 0.5rem;
+	height: max-content;
+	display: flex;
+	max-width: 100vw;
+	align-items: center;
+	gap: 1rem;
+	view-transition-name: header;
+	color: var(--color-color-bright-red);
+
+	[role="doc-subtitle"] {
+		font-style: normal;
+		font-size: var(--text-size-lg);
+		text-wrap: pretty;
+		max-width: 70vw;
+		width: max-content;
+	}
+	.header-line {
+		flex: 1 1 10%;
+		width: auto;
+		max-height: 12px;
+		overflow: visible;
+	}
+	.header-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		width: max-content;
+		max-width: 70%;
+	}
+	h1 {
+		height: min-content;
+		display: flex;
+		gap: 0.5rem;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	& .left-fill {
+		view-transition-name: left-fill;
+	}
+	& .right-fill {
+		view-transition-name: right-fill;
+	}
+}
+</style>

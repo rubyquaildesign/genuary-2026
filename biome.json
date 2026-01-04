@@ -28,15 +28,39 @@
 			"semicolons": "always"
 		}
 	},
+	"css": {
+		"formatter": {
+			"enabled": true
+		}
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noNonNullAssertion": "off"
+			}
 		}
 	},
 	"vcs": {
 		"clientKind": "git",
 		"enabled": true,
 		"useIgnoreFile": true
-	}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.astro"],
+			"assist": {
+				"enabled": false
+			},
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off",
+						"noUnusedVariables": "off"
+					}
+				}
+			}
+		}
+	]
 }

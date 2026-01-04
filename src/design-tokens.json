@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "color": {
+    "primitive": {
+      "neutral": {
+        "900": {
+          "$value": "#1A1B26",
+          "$type": "color",
+          "$description": "Darkest neutral - background base"
+        },
+        "700": {
+          "$value": "#414868",
+          "$type": "color",
+          "$description": "Dark neutral - muted elements"
+        },
+        "400": {
+          "$value": "#A9B1D6",
+          "$type": "color",
+          "$description": "Mid neutral - secondary text"
+        },
+        "200": {
+          "$value": "#C0CAF5",
+          "$type": "color",
+          "$description": "Light neutral - primary text"
+        }
+      },
+      "red": {
+        "400": {
+          "$value": "#F7768E",
+          "$type": "color",
+          "$description": "Primary red"
+        }
+      },
+      "green": {
+        "400": {
+          "$value": "#9ECE6A",
+          "$type": "color",
+          "$description": "Primary green"
+        }
+      },
+      "yellow": {
+        "400": {
+          "$value": "#E0AF68",
+          "$type": "color",
+          "$description": "Primary yellow"
+        }
+      },
+      "blue": {
+        "400": {
+          "$value": "#7AA2F7",
+          "$type": "color",
+          "$description": "Primary blue"
+        }
+      },
+      "magenta": {
+        "400": {
+          "$value": "#BB9AF7",
+          "$type": "color",
+          "$description": "Primary magenta"
+        }
+      },
+      "cyan": {
+        "400": {
+          "$value": "#7DCFFF",
+          "$type": "color",
+          "$description": "Primary cyan"
+        }
+      }
+    },
+    "semantic": {
+      "background": {
+        "base": {
+          "$value": "{color.primitive.neutral.900}",
+          "$type": "color",
+          "$description": "Default page background"
+        }
+      },
+      "foreground": {
+        "default": {
+          "$value": "{color.primitive.neutral.200}",
+          "$type": "color",
+          "$description": "Default text color"
+        },
+        "muted": {
+          "$value": "{color.primitive.neutral.400}",
+          "$type": "color",
+          "$description": "Secondary/muted text"
+        },
+        "subtle": {
+          "$value": "{color.primitive.neutral.700}",
+          "$type": "color",
+          "$description": "Subtle text, disabled states"
+        }
+      },
+      "accent": {
+        "primary": {
+          "$value": "{color.primitive.red.400}",
+          "$type": "color",
+          "$description": "Primary accent - headers, emphasis"
+        },
+        "secondary": {
+          "$value": "{color.primitive.blue.400}",
+          "$type": "color",
+          "$description": "Secondary accent - links, interactive"
+        }
+      },
+      "border": {
+        "default": {
+          "$value": "{color.primitive.neutral.200}",
+          "$type": "color",
+          "$description": "Default border color"
+        },
+        "muted": {
+          "$value": "{color.primitive.neutral.700}",
+          "$type": "color",
+          "$description": "Subtle border color"
+        }
+      },
+      "status": {
+        "success": {
+          "$value": "{color.primitive.green.400}",
+          "$type": "color",
+          "$description": "Success states"
+        },
+        "warning": {
+          "$value": "{color.primitive.yellow.400}",
+          "$type": "color",
+          "$description": "Warning states"
+        },
+        "error": {
+          "$value": "{color.primitive.red.400}",
+          "$type": "color",
+          "$description": "Error states"
+        },
+        "info": {
+          "$value": "{color.primitive.cyan.400}",
+          "$type": "color",
+          "$description": "Info states"
+        }
+      }
+    },
+    "palette": {
+      "$description": "Full palette for artwork/generative use",
+      "red": {
+        "$value": "{color.primitive.red.400}",
+        "$type": "color"
+      },
+      "green": {
+        "$value": "{color.primitive.green.400}",
+        "$type": "color"
+      },
+      "yellow": {
+        "$value": "{color.primitive.yellow.400}",
+        "$type": "color"
+      },
+      "blue": {
+        "$value": "{color.primitive.blue.400}",
+        "$type": "color"
+      },
+      "magenta": {
+        "$value": "{color.primitive.magenta.400}",
+        "$type": "color"
+      },
+      "cyan": {
+        "$value": "{color.primitive.cyan.400}",
+        "$type": "color"
+      }
+    }
+  }
+}

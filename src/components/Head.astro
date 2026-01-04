@@ -1,0 +1,138 @@
+---
+import type { GetImageResult } from 'astro';
+
+/**
+ * BaseHead.astro - Comprehensive head template for artwork pages
+ *
+ * Includes: sharing meta (OG + Twitter), favicons, browser display control
+ * Excludes: SEO meta, styles, scripts
+ *
+ * REFERENCES:
+ * - Open Graph Protocol: https://ogp.me/
+ * - Twitter/X Cards: https://developer.x.com/en/docs/x-for-websites/cards/overview/summary-card-with-large-image
+ * - Viewport meta: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
+ * - color-scheme: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/color-scheme
+ * - theme-color: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/theme-color
+ * - Favicon guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+ * - fediverse:creator: https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
+ */
+
+interface Props {
+	title: string;
+	description: string;
+
+	// Sharing image - required for good social sharing
+	// Recommended: 1200x630px for OG, works well for Twitter too
+	// Ref: https://ogp.me/ (og:image section)
+	image: GetImageResult;
+	imageAlt: string;
+
+	// Optional image dimensions - helps platforms render previews faster
+	// Ref: https://ogp.me/#structured (structured properties)
+	// The canonical URL of this page
+	// Ref: https://ogp.me/ (og:url)
+	url: string;
+
+	// Your site name for og:site_name
+	// Ref: https://ogp.me/ (optional metadata)
+	siteName?: string;
+
+	// Theme colors for light/dark mode browser chrome
+	// Ref: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/theme-color
+	themeColorLight?: string;
+	themeColorDark?: string;
+
+	// Twitter/X handle (without @) for twitter:site and twitter:creator
+	// Ref: https://developer.x.com/en/docs/x-for-websites/cards/guides/getting-started
+	twitterHandle?: string;
+
+	// Fediverse handle for Mastodon author attribution
+	// Format: @user@instance.social
+	// Ref: https://blog.joinmastodon.org/2024/07/highlighting-journalism-on-mastodon/
+	fediverseCreator?: string;
+
+	// Locale for og:locale - defaults to en_AU
+	// Ref: https://ogp.me/ (optional metadata)
+	locale?: string;
+
+	// OG type - defaults to "website", use "article" for blog posts
+	// Ref: https://ogp.me/#types
+	type?: 'website' | 'article';
+
+	// For article type only
+	// Ref: https://ogp.me/#type_article
+	publishedTime?: string;
+	modifiedTime?: string;
+	author?: string;
+}
+
+const {
+	title,
+	description,
+	image,
+	imageAlt,
+	url,
+	siteName,
+	themeColorLight = '#ffffff',
+	themeColorDark = '#000000',
+	fediverseCreator,
+	locale = 'en_AU',
+	type = 'website',
+	publishedTime,
+	modifiedTime,
+	author,
+} = Astro.props;
+
+// Ensure image URL is absolute
+const absoluteImageUrl = image.src.startsWith('http')
+	? image.src
+	: new URL(image.src, Astro.site).toString();
+---
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta
+	name="theme-color"
+	content={themeColorLight}
+	media="(prefers-color-scheme: light)"
+>
+<meta
+	name="theme-color"
+	content={themeColorDark}
+	media="(prefers-color-scheme: dark)"
+>
+<title>{title}</title>
+<meta name="description" content={description}>
+{author && <meta name="author" content={author} />}
+<meta property="og:title" content={title}>
+<meta property="og:type" content={type}>
+<meta property="og:url" content={url}>
+<meta property="og:image" content={absoluteImageUrl}>
+<meta property="og:description" content={description}>
+<meta property="og:locale" content={locale}>
+{siteName && <meta property="og:site_name" content={siteName} />}
+{
+  image.options.width && image.options.height && 
+  <meta property="og:image:width" content={String(image.options.width)} />
+<meta property="og:image:height" content={String(image.options.height)} />
+}
+<meta property="og:image:alt" content={imageAlt}>
+<meta
+	property="og:image:type"
+	content={image.options.format ? `image/${image.options.format}` : 'image/png' }
+>
+{type === "article" && publishedTime && (
+  <meta property="article:published_time" content={publishedTime} />
+)}
+{type === "article" && modifiedTime && (
+  <meta property="article:modified_time" content={modifiedTime} />
+)}
+{type === "article" && author && (
+  <meta property="article:author" content={author} />
+)}
+{fediverseCreator && (
+  <meta name="fediverse:creator" content={fediverseCreator} />
+)}
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">

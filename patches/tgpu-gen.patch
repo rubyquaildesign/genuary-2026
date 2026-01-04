@@ -1,0 +1,140 @@
+diff --git a/colors.d.mts b/colors.d.mts
+new file mode 100644
+index 0000000000000000000000000000000000000000..32a27c601b9828073ba2abbcfe40992cc8e58801
+--- /dev/null
++++ b/colors.d.mts
+@@ -0,0 +1,37 @@
++export default colors;
++declare namespace colors {
++    let Reset: string;
++    let Black: string;
++    let Red: string;
++    let Green: string;
++    let Yellow: string;
++    let Blue: string;
++    let Magenta: string;
++    let Cyan: string;
++    let White: string;
++    let BrightBlack: string;
++    let BrightRed: string;
++    let BrightGreen: string;
++    let BrightYellow: string;
++    let BrightBlue: string;
++    let BrightMagenta: string;
++    let BrightCyan: string;
++    let BrightWhite: string;
++    let BgBlack: string;
++    let BgRed: string;
++    let BgGreen: string;
++    let BgYellow: string;
++    let BgBlue: string;
++    let BgMagenta: string;
++    let BgCyan: string;
++    let BgWhite: string;
++    let BgBrightBlack: string;
++    let BgBrightRed: string;
++    let BgBrightGreen: string;
++    let BgBrightYellow: string;
++    let BgBrightBlue: string;
++    let BgBrightMagenta: string;
++    let BgBrightCyan: string;
++    let BgBrightWhite: string;
++    let Bold: string;
++}
+diff --git a/gen.d.mts b/gen.d.mts
+new file mode 100644
+index 0000000000000000000000000000000000000000..fd4e727ff1843fc9a71ddbae4689acf7853ee1a3
+--- /dev/null
++++ b/gen.d.mts
+@@ -0,0 +1,37 @@
++/**
++ * @param {string} wgsl
++ * @param {Options} options
++ */
++export function generate(wgsl: string, options?: Options): string;
++export default main;
++export type Options = {
++    inputPath: string;
++    outputPath: string;
++    toTs: boolean;
++    moduleSyntax: "commonjs" | "esmodule";
++    existingFileStrategy?: "keep" | "overwrite";
++    declaredIdentifiers?: Set<string>;
++    usedImports?: {
++        tgpu?: boolean;
++        data?: boolean;
++    };
++};
++export type AliasInfo = import("wgsl_reflect").AliasInfo;
++export type MemberInfo = import("wgsl_reflect").MemberInfo;
++export type TypeInfo = import("wgsl_reflect").TypeInfo;
++export type VariableInfo = import("wgsl_reflect").VariableInfo;
++export type FunctionInfo = import("wgsl_reflect").FunctionInfo;
++/**
++ * @typedef {object} Options
++ * @prop {string} inputPath
++ * @prop {string} outputPath
++ * @prop {boolean} toTs
++ * @prop {'commonjs' | 'esmodule'} moduleSyntax
++ * @prop {'keep' | 'overwrite'} [existingFileStrategy]
++ * @prop {Set<string>} [declaredIdentifiers]
++ * @prop {{tgpu?: boolean, data?: boolean }} [usedImports]
++ */
++/**
++ * @param {Options} options
++ */
++declare function main(options: Options): Promise<void>;
+diff --git a/outputPathCompiler.d.mts b/outputPathCompiler.d.mts
+new file mode 100644
+index 0000000000000000000000000000000000000000..6eba913d06c0a9dd26d17bae411bd53fa85b08de
+--- /dev/null
++++ b/outputPathCompiler.d.mts
+@@ -0,0 +1 @@
++export function createOutputPathCompiler(input: string, output: string): (file: string) => string;
+diff --git a/package.json b/package.json
+index e99684686ce9112dbac2aeab2d6edc56ad008959..4b003f850e9a478d4fec43e09a2f22ee5aa97744 100644
+--- a/package.json
++++ b/package.json
+@@ -6,6 +6,12 @@
+   "bin": {
+     "tgpu-gen": "./tgpu-gen.mjs"
+   },
++  "exports": {
++    ".":{
++      "default":"./gen.mjs",
++      "types":"./gen.d.mts"
++    }
++  },
+   "sideEffects": false,
+   "engines": {
+     "node": ">=12.20.0"
+@@ -24,7 +30,8 @@
+     "README.md",
+     "LICENSE",
+     "package.json",
+-    "**/*.mjs"
++    "**/*.mjs",
++    "**/*.d.mts"
+   ],
+   "devDependencies": {
+     "vitest": "^3.2.4"
+diff --git a/tgpu-gen.d.mts b/tgpu-gen.d.mts
+new file mode 100644
+index 0000000000000000000000000000000000000000..b7988016daa5bf0b3d4fcdccaba52780a9983d9d
+--- /dev/null
++++ b/tgpu-gen.d.mts
+@@ -0,0 +1,2 @@
++#!/usr/bin/env node
++export {};
+diff --git a/tgpu-gen.mjs b/tgpu-gen.mjs
+index e21d5c52394a127555b40f7065ced42d72cf8eaf..d8da1be061d95f7e61e0bf405e8da9980b52012a 100755
+--- a/tgpu-gen.mjs
++++ b/tgpu-gen.mjs
+@@ -223,6 +223,7 @@ const execute = async () => {
+   if (watch) {
+     console.log(`${color.Cyan}Watching for changes...${color.Reset}`);
+     const watcher = chokidar.watch(inputFiles);
++    // @ts-ignore
+     watcher.on('change', async (file) => {
+       await processFiles({
+         exitOnError: false,

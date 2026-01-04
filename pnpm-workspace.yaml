@@ -1,3 +1,6 @@
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+patchedDependencies:
+  tgpu-gen: patches/tgpu-gen.patch

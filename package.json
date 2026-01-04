@@ -6,13 +6,55 @@
 		"dev": "astro dev",
 		"build": "astro build",
 		"preview": "astro preview",
-		"astro": "astro"
+		"astro": "astro",
+		"knip": "knip",
+		"publish": "async-neocities",
+		"generate-script-files": "deno run --allow-read --allow-write ./generateArtworkScripts.ts"
 	},
 	"dependencies": {
-		"astro": "^5.16.6"
+		"@astrojs/sitemap": "^3.6.0",
+		"@b-fuze/deno-dom": "npm:@jsr/b-fuze__deno-dom@^0.1.56",
+		"@fontsource-variable/sono": "^5.2.8",
+		"@fontsource/cousine": "^5.2.7",
+		"@rubyquaildesign/quail-art": "npm:@jsr/rubyquaildesign__quail-art@^4.0.1",
+		"@std/collections": "npm:@jsr/std__collections@^1.1.3",
+		"@std/data-structures": "npm:@jsr/std__data-structures@^1.0.9",
+		"@std/encoding": "npm:@jsr/std__encoding@^1.0.10",
+		"@std/fmt": "npm:@jsr/std__fmt@^1.0.8",
+		"@std/random": "npm:@jsr/std__random@^0.1.4",
+		"@std/text": "npm:@jsr/std__text@^1.0.16",
+		"@std/ulid": "npm:@jsr/std__ulid@1.0.0-rc.4",
+		"@tweenjs/tween.js": "^25.0.0",
+		"@types/d3": "^7.4.3",
+		"astro": "^5.16.6",
+		"astro-robots": "^2.3.1",
+		"bezier-js": "^6.1.4",
+		"d3": "~7.4.5",
+		"lygia": "^1.4.0",
+		"simplex-noise": "^4.0.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.10",
-		"async-neocities": "^4.1.2"
+		"@rubyquaildesign/capture": "npm:@jsr/rubyquaildesign__capture@^2.0.0",
+		"@texel/color": "^1.1.10",
+		"@types/bezier-js": "~4.1.3",
+		"@types/deno": "^2.5.0",
+		"@types/jsdom": "~27.0.0",
+		"@types/node": "^25.0.3",
+		"@webgpu/types": "^0.1.68",
+		"async-neocities": "^4.1.2",
+		"cheerio": "^1.1.2",
+		"chokidar": "^5.0.0",
+		"fast-glob": "^3.3.3",
+		"happy-dom": "^20.0.11",
+		"jsdom": "^27.3.0",
+		"knip": "^5.76.1",
+		"sharp": "^0.34.5",
+		"tgpu-gen": "^0.2.0",
+		"typegpu": "^0.8.2",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.0",
+		"wesl-plugin": "^0.6.49",
+		"wgsl_reflect": "^1.2.3"
 	}
 }
