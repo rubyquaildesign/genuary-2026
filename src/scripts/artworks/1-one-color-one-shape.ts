@@ -194,7 +194,7 @@ async function setup() {
 		(-1 / 16) * TAU,
 		(1 / 16) * TAU,
 	);
-	const rotationData = pts.map((v, i) => ({
+	const rotationData = pts.map((_v, _i) => ({
 		rotation: 0,
 		rSpeed: rotRandomiser(),
 	}));

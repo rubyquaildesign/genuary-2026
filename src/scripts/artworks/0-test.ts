@@ -1,8 +1,6 @@
 // #region generated
-import { createArtwork, drawDot } from '$scripts/renderer';
+import { createArtwork } from '$scripts/renderer';
 import '$scripts/globals';
-import { number } from 'astro:schema';
-import * as h from '@rubyquaildesign/quail-art';
 import * as T from '@texel/color';
 import { ascending, Delaunay, polygonCentroid, randomLcg } from 'd3';
 import tgpu from 'typegpu';

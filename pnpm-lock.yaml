@@ -67,6 +67,9 @@ importers:
       d3:
         specifier: ~7.4.5
         version: 7.4.5
+      d3-force-bounce:
+        specifier: ^1.0.2
+        version: 1.0.2
       lygia:
         specifier: ^1.4.0
         version: 1.4.0
@@ -1785,6 +1788,10 @@ packages:
 
   d3-fetch@3.0.1:
     resolution: {integrity: sha512-kpkQIM20n3oLVBKGg6oHrUchHM3xODkTzjMoj7aWQFq5QEM+R6E4WkzT5+tojDY7yjez8KgCBRoj4aEr99Fdqw==}
+    engines: {node: '>=12'}
+
+  d3-force-bounce@1.0.2:
+    resolution: {integrity: sha512-7dvdcqH8jdICSLicRxmBmBYHRmVsZpVkuIkZHRhIaDJoTOJ5KGhp/LPn0qx4Y7Sb04Q+ELWHT5iSuMmvqIgs0Q==}
     engines: {node: '>=12'}
 
   d3-force@3.0.0:
@@ -5007,6 +5014,10 @@ snapshots:
   d3-fetch@3.0.1:
     dependencies:
       d3-dsv: 3.0.1
+
+  d3-force-bounce@1.0.2:
+    dependencies:
+      d3-quadtree: 3.0.1
 
   d3-force@3.0.0:
     dependencies:

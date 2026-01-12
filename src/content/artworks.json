@@ -8,7 +8,7 @@
 			"prompt": "test",
 			"ready": true,
 			"title": "My Test",
-			"ideas":"Colours, Deluany, Spectrum Mix"
+			"ideas": "Colours, Deluany, Spectrum Mix"
 		},
 		{
 			"day": 1,
@@ -38,17 +38,17 @@
 		{
 			"day": 4,
 			"prompt": "Lowres. An image or graphic with low resolution, where details are simplified or pixelated.",
-			"title": "",
+			"title": "A Simple Little Filter",
 			"id": "4-lowres-an-pixelated",
-			"ready": false,
+			"ready": true,
 			"description": ""
 		},
 		{
 			"day": 5,
 			"prompt": "Write “Genuary”. Avoid using a font.",
-			"title": "",
+			"title": "A particle for your thoughts",
 			"id": "5-write-genuary-font",
-			"ready": false,
+			"ready": true,
 			"description": ""
 		},
 		{
@@ -86,9 +86,9 @@
 		{
 			"day": 10,
 			"prompt": "Polar coordinates.",
-			"title": "",
+			"title": "Polar Boids",
 			"id": "10-polar-coordinates",
-			"ready": false,
+			"ready": true,
 			"description": ""
 		},
 		{

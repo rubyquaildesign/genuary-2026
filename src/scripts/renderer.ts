@@ -75,8 +75,6 @@ export async function createArtwork(
 				return null;
 			});
 			if (url) {
-				console.log(url);
-
 				await client.captureCanvas(url);
 			}
 		}

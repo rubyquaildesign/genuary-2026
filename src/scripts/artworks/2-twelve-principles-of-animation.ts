@@ -2,28 +2,15 @@
 
 import { createArtwork } from '$scripts/renderer';
 import '$scripts/globals';
-import {
-	bSpline,
-	cubicBSplineToBezierSpline,
-	drawBSpline,
-	drawLoop,
-	type Vec,
-} from '@rubyquaildesign/quail-art';
+import type { Vec } from '@rubyquaildesign/quail-art';
 import { zip } from '@std/collections';
 import * as T from '@texel/color';
 import type { Tween } from '@tweenjs/tween.js';
-import { Bezier } from 'bezier-js';
 import {
-	ColorPaletteBlue,
-	ColorPaletteGreen,
-	ColorPaletteMagenta,
-	ColorPaletteRed,
-	ColorPaletteYellow,
 	ColorPrimitiveBlue400,
 	ColorPrimitiveCyan400,
 	ColorPrimitiveGreen400,
 	ColorPrimitiveMagenta400,
-	ColorPrimitiveNeutral200,
 	ColorPrimitiveNeutral900,
 	ColorPrimitiveRed400,
 	ColorPrimitiveYellow400,
@@ -60,7 +47,7 @@ abstract class Rect {
 	abstract tween: Tween;
 	abstract startX: number;
 	abstract speed: number;
-	abstract color:string;
+	abstract color: string;
 	abstract draw(): void;
 	abstract onStart(): void;
 
@@ -82,9 +69,9 @@ class SquashRect extends Rect {
 	onLeave(): void {
 		throw new Error('Method not implemented.');
 	}
-	constructor(startX: number, startY:number) {
+	constructor(startX: number, startY: number) {
 		super();
-		this.startPos = new Vec(startX,startY);
+		this.startPos = new Vec(startX, startY);
 	}
 }
 const [CW, CH] = [canvasWidth, canvasHeight];

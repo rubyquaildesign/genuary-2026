@@ -9,7 +9,7 @@ export interface Props {
 	xmlns="http://www.w3.org/2000/svg"
 	class={Astro.props.classes.join(' ')}
 	viewBox="0 0 10 10"
-  preserveAspectRatio="none"
+	preserveAspectRatio="none"
 >
 	<line
 		vector-effect="non-scaling-stroke"
@@ -18,7 +18,7 @@ export interface Props {
 		y1="5"
 		y2="5"
 		stroke="currentColor"
-    stroke-linecap="round"
+		stroke-linecap="round"
 		stroke-width={(Astro.props.strokeWidth ?? 4).toString()}
 	></line>
 </svg>

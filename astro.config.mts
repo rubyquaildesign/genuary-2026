@@ -4,7 +4,7 @@ import { mkdir, rm, writeFile } from 'node:fs/promises';
 import { basename, dirname, relative, resolve } from 'node:path';
 import { cwd } from 'node:process';
 import sitemap from '@astrojs/sitemap';
-import { toCamelCase, toPascalCase } from '@std/text';
+import { toCamelCase } from '@std/text';
 import type { AstroIntegration } from 'astro';
 import { defineConfig } from 'astro/config';
 import robots from 'astro-robots';

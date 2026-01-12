@@ -30,6 +30,7 @@
 		"astro-robots": "^2.3.1",
 		"bezier-js": "^6.1.4",
 		"d3": "~7.4.5",
+		"d3-force-bounce": "^1.0.2",
 		"lygia": "^1.4.0",
 		"simplex-noise": "^4.0.3"
 	},

@@ -13,7 +13,7 @@ const image = await import(`../assets/${props.id}.png`)
 	.then((v: { default: ImageMetadata }) => {
 		const d = v.default;
 		console.log(d);
-		
+
 		return getImage({ src: d, format: 'png', width: 1200, height: 628 });
 	})
 	.catch(() => {

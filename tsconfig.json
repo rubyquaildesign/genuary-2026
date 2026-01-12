@@ -1,6 +1,11 @@
 {
 	"extends": "astro/tsconfigs/strict",
-	"include": [".astro/types.d.ts", "**/*", ".shader-data/**/*"],
+	"include": [
+		".astro/types.d.ts",
+		"**/*",
+		".shader-data/**/*",
+		"src/global.d.ts"
+	],
 	"compilerOptions": {
 		"types": ["@webgpu/types"],
 		"paths": {

@@ -219,44 +219,44 @@ export function reverseLoop(loop: Vp[]) {
 }
 
 export function pointAlongPath(loop: ArrayLike<Vp>, percentage: number) {
-    if (loop.length === 0) return new Vec(0, 0);
-    if (loop.length === 1) return new Vec(loop[0]);
+	if (loop.length === 0) return new Vec(0, 0);
+	if (loop.length === 1) return new Vec(loop[0]);
 
-    // Calculate total perimeter
-    const perimeter = polygonPerimeter(loop);
-    if (perimeter === 0) return new Vec(loop[0]);
+	// Calculate total perimeter
+	const perimeter = polygonPerimeter(loop);
+	if (perimeter === 0) return new Vec(loop[0]);
 
-    // Normalize percentage to [0, 1] and handle wrapping
-    const normalizedPercentage = ((percentage % 1) + 1) % 1;
-    const targetDistance = normalizedPercentage * perimeter;
+	// Normalize percentage to [0, 1] and handle wrapping
+	const normalizedPercentage = ((percentage % 1) + 1) % 1;
+	const targetDistance = normalizedPercentage * perimeter;
 
-    // Walk along the path to find the segment
-    let accumulatedDistance = 0;
+	// Walk along the path to find the segment
+	let accumulatedDistance = 0;
 
-    for (let i = 0; i < loop.length; i++) {
-        const p1 = new Vec(loop[i]);
-        const p2 = new Vec(loop[(i + 1) % loop.length]);
-        const segmentLength = p1.dist(p2);
+	for (let i = 0; i < loop.length; i++) {
+		const p1 = new Vec(loop[i]);
+		const p2 = new Vec(loop[(i + 1) % loop.length]);
+		const segmentLength = p1.dist(p2);
 
-        if (accumulatedDistance + segmentLength >= targetDistance) {
-            // Found the segment, interpolate along it
-            const distanceIntoSegment = targetDistance - accumulatedDistance;
-            const t = segmentLength > 0 ? distanceIntoSegment / segmentLength : 0;
-            return Vec.lerp(p1, p2, t);
-        }
+		if (accumulatedDistance + segmentLength >= targetDistance) {
+			// Found the segment, interpolate along it
+			const distanceIntoSegment = targetDistance - accumulatedDistance;
+			const t = segmentLength > 0 ? distanceIntoSegment / segmentLength : 0;
+			return Vec.lerp(p1, p2, t);
+		}
 
-        accumulatedDistance += segmentLength;
-    }
+		accumulatedDistance += segmentLength;
+	}
 
-    // Fallback (shouldn't reach here due to normalization)
-    return new Vec(loop[0]);
+	// Fallback (shouldn't reach here due to normalization)
+	return new Vec(loop[0]);
 }
 
 export function pointsAlongPath(loop: Vp[], count: number) {
-    const points = [];
-    for (let i = 0; i < count; i++) {
-        const percentage = i / count;
-        points.push(pointAlongPath(loop, percentage));
-    }
-    return points;
+	const points = [];
+	for (let i = 0; i < count; i++) {
+		const percentage = i / count;
+		points.push(pointAlongPath(loop, percentage));
+	}
+	return points;
 }

@@ -34,7 +34,7 @@ export function createStar(
  * @param {number} size - Size of the heart
  * @returns {Array<Vec>} Loop representing the heart
  */
-export function createHeart(size:number) {
+export function createHeart(size: number) {
 	const loop = [];
 	const segments = 64; // Number of points for smooth curve
 
@@ -50,8 +50,8 @@ export function createHeart(size:number) {
 				Math.cos(4 * t));
 		loop.push(new Vec([x, y]));
 	}
-    const pg = polygonCentroid(loop);
-	return loop.map(v => v.add(pg));
+	const pg = polygonCentroid(loop);
+	return loop.map((v) => v.add(pg));
 }
 
 /**
@@ -62,7 +62,12 @@ export function createHeart(size:number) {
  * @param {number} [segments=32] - Number of segments for the curve
  * @returns {Array<Vec>} Loop representing the arch
  */
-export function createArch(radius:number, startAngle:number, endAngle:number, segments = 32) {
+export function createArch(
+	radius: number,
+	startAngle: number,
+	endAngle: number,
+	segments = 32,
+) {
 	const loop = [];
 	const angleRange = endAngle - startAngle;
 
@@ -82,7 +87,7 @@ export function createArch(radius:number, startAngle:number, endAngle:number, se
  * @param {number} radius - Radius of the circumscribed circle
  * @returns {Array<Vec>} Loop representing the polygon
  */
-export function createPolygon(sides:number, radius:number) {
+export function createPolygon(sides: number, radius: number) {
 	const loop = [];
 
 	for (let i = 0; i < sides; i++) {
@@ -101,7 +106,7 @@ export function createPolygon(sides:number, radius:number) {
  * @param {number} [segments=64] - Number of segments
  * @returns {Array<Vec>} Loop representing the circle
  */
-export function createCircle(radius:number, segments = 64) {
+export function createCircle(radius: number, segments = 64) {
 	const loop = [];
 
 	for (let i = 0; i < segments; i++) {

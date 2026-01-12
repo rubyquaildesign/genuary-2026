@@ -7,6 +7,6 @@ main {
 	grid-auto-flow: row;
 	gap: 1rem;
 	justify-content: center;
-  padding-block-start: 1rem;
+	padding-block-start: 1rem;
 	padding-inline: 1rem;
 }

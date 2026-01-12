@@ -1,4 +1,5 @@
 import { Vec } from '@rubyquaildesign/quail-art';
+import { sample } from '@std/random';
 import { descending, randomLcg } from 'd3';
 import { polygonArea } from '$scripts/geometry';
 
@@ -13,6 +14,9 @@ export function createRandom(seed?: number) {
 		chance: (p = 0.5) => random.source(source)(0, 1)() < p,
 		pick: <T>(arr: readonly T[]): T =>
 			arr[randomInt.source(source)(0, arr.length)()],
+		weightedSample: <T>(arr: readonly T[], weights: number[]): T => {
+			return sample(arr, { prng: source, weights })!;
+		},
 		// Point in rect using your Vec
 		pointInRec: (minX: number, minY: number, maxX: number, maxY: number) =>
 			new Vec(

@@ -44,7 +44,8 @@
 
 :root {
 	--default-font:
-		"Cousine", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+		"Cousine", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+		"DejaVu Sans Mono", monospace;
 	--text-size-xs: 0.79rem;
 	--text-size-sm: 0.89rem;
 	--text-size-md: 1rem;
@@ -62,7 +63,9 @@ body {
 	font-size: var(--text-size-md);
 	font-weight: normal;
 }
-h5, h4, h3 {
+h5,
+h4,
+h3 {
 	font-size: var(--text-size-lg);
 	font-weight: 700;
 }
